@@ -77,7 +77,7 @@ search.addEventListener('input',()=>{
         return value.caseNumber.toLowerCase().includes(search.value.trim().toLowerCase());
         });
     }
-    else{
+    else if(filter.value=='' || search.value==''){
         newArray=data;
     }
     showData(newArray);
