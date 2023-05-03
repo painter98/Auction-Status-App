@@ -1,0 +1,76 @@
+body{
+    margin:0;
+}
+
+.container{
+    border: 1px solid black;
+    padding:1vw;
+    width: 400px;
+    height: 170px;
+    border-radius: 0.5rem;
+}
+
+.heading{
+    background-color: black;
+    color:white;
+    padding:1vw;
+    margin-bottom: 2rem;
+}
+
+#card{
+    display:flex;
+    flex-flow: wrap;
+    gap:1rem;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+}
+
+.status{
+    background-color: skyblue;
+    padding:2%;
+    border-radius: 1rem;
+}
+.yellow{
+    background-color: yellow;
+}
+.red{
+    background-color: red;
+}
+
+#first,#second{
+    display:flex;
+    justify-content:space-between;
+}
+
+#second > div{
+    word-wrap:break-word;
+    width:65%;
+}
+
+#load{
+    display:none;
+}
+
+@media screen and (min-width:300px) and (max-width:400px){
+    .container{
+        height:200px;
+    }
+}
+
+#search{
+    padding:1vw;
+    width:88%;
+    margin:0 5vw;
+    border-radius: 1rem;
+}
+
+#search:focus{
+    outline:none;
+}
+
+#filter{
+    margin-bottom:3vw;
+    margin-left:6vw;
+}
