@@ -8,10 +8,12 @@ function getData(){
 
     fetch(url)
     .then(response => response.json())
-    .then(data => {
-        sessionStorage.setItem('myArr',JSON.stringify(data));
-        showData(data);
+    .then(dataval => {
+        sessionStorage.setItem('myArr',JSON.stringify(dataval));
+        showData(dataval);
+        data=dataval;
         document.getElementById("load").style.display = "none";
+        console.log(data);
         });
 }
 
@@ -61,10 +63,10 @@ console.log(filter.value);
 
 search.addEventListener('input',()=>{
     let newArray;
-
+    console.log(search.value,data);
     if(filter.value == 'to Location'){
         newArray = data.filter((value)=>{
-            return value.toLocation.toLowerCase().includes(search.value.trim().toLowerCase());
+            return value.toLocation.toLowerCase().includes(search.value.toLowerCase().trim());
         });
    }
    else if(filter.value == 'status'){
@@ -77,7 +79,7 @@ search.addEventListener('input',()=>{
         return value.caseNumber.toLowerCase().includes(search.value.trim().toLowerCase());
         });
     }
-    else if(filter.value=='' || search.value==''){
+    else if(search.value=='' || filter.value==''){
         newArray=data;
     }
     showData(newArray);
